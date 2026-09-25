@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b4kkc38c1jbna"]
+
+[ext_resource type="Script" uid="uid://dcatryxu1y3ph" path="res://scripts/player/creature_player.gd" id="1_y5h27"]
+[ext_resource type="Texture2D" uid="uid://bt2pvljand161" path="res://assets/spritesheets/icon.svg" id="2_5dus2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cvwj"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5h27"]
+
+[node name="creature_player" type="CharacterBody2D" unique_id=794040658 groups=["player"]]
+collision_mask = 5
+script = ExtResource("1_y5h27")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1081145556]
+position = Vector2(1.4210855e-14, 1.4210855e-14)
+scale = Vector2(0.24999999, 0.24999999)
+texture = ExtResource("2_5dus2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885717667]
+shape = SubResource("RectangleShape2D_2cvwj")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=575701823]
+position = Vector2(24, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1250010382]
+shape = SubResource("RectangleShape2D_y5h27")
+debug_color = Color(0.9907598, 0.02966972, 0.24169159, 0.41960785)
+
+[node name="up" type="Marker2D" parent="." unique_id=1080368678]
+position = Vector2(0, -24)
+
+[node name="down" type="Marker2D" parent="." unique_id=1921777201]
+position = Vector2(0, 24)
+
+[node name="right" type="Marker2D" parent="." unique_id=8660913]
+position = Vector2(24, 0)
+
+[node name="left" type="Marker2D" parent="." unique_id=1887557358]
+position = Vector2(-24, 0)

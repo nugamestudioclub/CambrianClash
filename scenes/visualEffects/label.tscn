@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ddyi6gh51jg0p"]
+
+[ext_resource type="Script" uid="uid://c8c5d1icmlod0" path="res://scripts/visualEffects/label.gd" id="1_y38sv"]
+
+[node name="Label" type="Label" unique_id=964171332]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "100"
+script = ExtResource("1_y38sv")

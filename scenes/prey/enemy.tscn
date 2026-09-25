@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dmodtjvmb8utw"]
+
+[ext_resource type="Texture2D" uid="uid://bt2pvljand161" path="res://assets/spritesheets/icon.svg" id="1_7k104"]
+[ext_resource type="Script" uid="uid://bpoihpp4t1c1d" path="res://scripts/prey/area_2d.gd" id="2_4gyqm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 80.0
+
+[node name="enemy" type="Area2D" unique_id=1964379690]
+scale = Vector2(0.265, 0.265)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("2_4gyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=932665157]
+shape = SubResource("CircleShape2D_4gyqm")
+debug_color = Color(0.5124757, 0.57753766, 3.85046e-07, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1992135861]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("1_7k104")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
