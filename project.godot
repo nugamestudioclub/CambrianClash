@@ -1,15 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
 
 config/name="CambrianClash"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://dd55p7t23tc63"
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://assets/spritesheets/icon.svg"
 
 [display]
 
 window/size/mode=2
 window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="CambrianClash"
 
 [global_group]
 

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cpshm4d3pyiod"]
 
-[ext_resource type="Script" uid="uid://cisrfbn6bn3dw" path="res://scripts/borders/border_1.gd" id="1_grc4e"]
+[ext_resource type="Script" uid="uid://bv7hsbl4envuh" path="res://scripts/borders/border_1.cs" id="1_pw6in"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4y4to"]
 size = Vector2(20, 658)
 
 [node name="border1" type="Area2D" unique_id=1416470455]
-script = ExtResource("1_grc4e")
+script = ExtResource("1_pw6in")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=297358934]
 position = Vector2(0, 319)

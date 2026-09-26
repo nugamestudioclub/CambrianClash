@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://dmodtjvmb8utw"]
 
 [ext_resource type="Texture2D" uid="uid://bt2pvljand161" path="res://assets/spritesheets/icon.svg" id="1_7k104"]
-[ext_resource type="Script" uid="uid://bpoihpp4t1c1d" path="res://scripts/prey/area_2d.gd" id="2_4gyqm"]
+[ext_resource type="Script" uid="uid://cxo0ore126k0o" path="res://scripts/prey/area_2d.cs" id="1_ph6pp"]
+[ext_resource type="PackedScene" uid="uid://ddyi6gh51jg0p" path="res://scenes/visualEffects/label.tscn" id="2_qy7vw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 80.0
 
-[node name="enemy" type="Area2D" unique_id=1964379690]
+[node name="enemy" type="Area2D" unique_id=1964379690 node_paths=PackedStringArray("_sprite2d")]
 scale = Vector2(0.265, 0.265)
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("2_4gyqm")
+script = ExtResource("1_ph6pp")
+_sprite2d = NodePath("Sprite2D")
+PointsScene = ExtResource("2_qy7vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=932665157]
 shape = SubResource("CircleShape2D_4gyqm")

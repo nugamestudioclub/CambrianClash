@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://3twrvv2ohfx5"]
 
 [ext_resource type="PackedScene" uid="uid://dmodtjvmb8utw" path="res://scenes/prey/enemy.tscn" id="1_2pikx"]
-[ext_resource type="Script" uid="uid://gg3er001de48" path="res://scripts/prey/new_enemy.gd" id="1_t2ljd"]
+[ext_resource type="Script" uid="uid://bdjd2eq06p7fc" path="res://scripts/prey/new_enemy.cs" id="1_m0kxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqk2v"]
 
-[node name="new_enemy" type="CharacterBody2D" unique_id=674692796]
+[node name="new_enemy" type="CharacterBody2D" unique_id=674692796 node_paths=PackedStringArray("_enemy")]
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("1_t2ljd")
+script = ExtResource("1_m0kxd")
+_enemy = NodePath("enemy")
 
 [node name="enemy" parent="." unique_id=1964379690 instance=ExtResource("1_2pikx")]
 
