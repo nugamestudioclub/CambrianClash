@@ -8,7 +8,7 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5h27"]
 
-[node name="creature_player" type="CharacterBody2D" unique_id=794040658 node_paths=PackedStringArray("_hitbox", "_up", "_down", "_left", "_right") groups=["player"]]
+[node name="creature_player" type="CharacterBody2D" unique_id=794040658 node_paths=PackedStringArray("_hitbox", "_up", "_down", "_left", "_right", "_sprite") groups=["player"]]
 collision_mask = 5
 script = ExtResource("1_28qgr")
 _hitbox = NodePath("hitbox")
@@ -16,6 +16,7 @@ _up = NodePath("up")
 _down = NodePath("down")
 _left = NodePath("left")
 _right = NodePath("right")
+_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1081145556]
 position = Vector2(1.4210855e-14, 1.4210855e-14)
