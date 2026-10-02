@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://grc7jlm32oca"]
+
+[ext_resource type="Texture2D" uid="uid://bqkavbl1bqie2" path="res://assets/spritesheets/16984001-sand-waves-lighter-a-seafloor-texture-depicting-the-sand-at-the-bottom-of-the-ocean.jpg" id="1_2ypcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgho"]
+size = Vector2(1352, 66)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=538458320 groups=["floor"]]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1432229872]
+position = Vector2(404, 23)
+shape = SubResource("RectangleShape2D_5xgho")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=438301257]
+position = Vector2(404, 24.000004)
+scale = Vector2(1.04, 0.065641016)
+texture = ExtResource("1_2ypcq")

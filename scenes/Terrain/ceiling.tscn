@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://6pw6fwxvjyk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgho"]
+size = Vector2(1352, 66)
+
+[node name="ceiling" type="StaticBody2D" unique_id=1206576644 groups=["floor"]]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=46241949]
+position = Vector2(404, 23)
+shape = SubResource("RectangleShape2D_5xgho")
