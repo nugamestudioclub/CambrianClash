@@ -1,37 +1,22 @@
 [gd_scene format=3 uid="uid://dd55p7t23tc63"]
 
 [ext_resource type="PackedScene" uid="uid://b4kkc38c1jbna" path="res://scenes/player/creature_player.tscn" id="1_geeqx"]
+[ext_resource type="PackedScene" uid="uid://6pw6fwxvjyk1" path="res://scenes/Terrain/ceiling.tscn" id="2_6g0ag"]
 [ext_resource type="PackedScene" uid="uid://dmodtjvmb8utw" path="res://scenes/prey/enemy.tscn" id="2_64rc8"]
+[ext_resource type="PackedScene" uid="uid://grc7jlm32oca" path="res://scenes/Terrain/floor.tscn" id="2_uprrs"]
 [ext_resource type="PackedScene" uid="uid://cpshm4d3pyiod" path="res://scenes/Terrain/border_1.tscn" id="3_uprrs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgho"]
-size = Vector2(1352, 66)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vonw3"]
-size = Vector2(376, 20)
+[ext_resource type="PackedScene" uid="uid://d00kqpu4tdmsh" path="res://scenes/Terrain/semisolid.tscn" id="5_6g0ag"]
 
 [node name="level" type="Node2D" unique_id=854538153]
 
 [node name="creature_player" parent="." unique_id=794040658 instance=ExtResource("1_geeqx")]
 position = Vector2(960, 584)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1993412123 groups=["floor"]]
+[node name="ceiling" parent="." unique_id=1206576644 instance=ExtResource("2_6g0ag")]
+position = Vector2(169, -61)
+
+[node name="StaticBody2D" parent="." unique_id=538458320 instance=ExtResource("2_uprrs")]
 position = Vector2(168, 616)
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=72461699]
-position = Vector2(404, 23)
-shape = SubResource("RectangleShape2D_5xgho")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2064006869 groups=["floor"]]
-position = Vector2(160, -56)
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=475954857]
-position = Vector2(404, 23)
-shape = SubResource("RectangleShape2D_5xgho")
 
 [node name="enemy" parent="." unique_id=522258361 instance=ExtResource("2_64rc8")]
 position = Vector2(856, 312)
@@ -42,19 +27,11 @@ position = Vector2(320, 128)
 [node name="enemy3" parent="." unique_id=1011382567 instance=ExtResource("2_64rc8")]
 position = Vector2(216, 392)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=796755045]
+[node name="StaticBody2D2" parent="." unique_id=1877088251 instance=ExtResource("5_6g0ag")]
 position = Vector2(576, 344)
-collision_layer = 4
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=89287723]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_vonw3")
-one_way_collision = true
 
 [node name="border1" parent="." unique_id=1416470455 instance=ExtResource("3_uprrs")]
 position = Vector2(-40, -40)
 
 [node name="border2" parent="." unique_id=529756852 instance=ExtResource("3_uprrs")]
 position = Vector2(1192, -40)
-left_side = false
