@@ -15,6 +15,10 @@ run/main_scene="uid://dd55p7t23tc63"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://assets/spritesheets/icon.svg"
 
+[autoload]
+
+Score="*uid://dg8qdq32jwo3p"
+
 [display]
 
 window/size/mode=2

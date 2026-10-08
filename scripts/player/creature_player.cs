@@ -14,6 +14,7 @@ public partial class creature_player : CharacterBody2D {
 	private float _speed = 190f;
 	private float _accel = 5f;
 	private bool _cooldown = true;
+	
 	public override void _Ready()
 	{
 		_hitbox.Visible = false;
