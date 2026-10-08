@@ -9,9 +9,9 @@ public partial class creature_player : CharacterBody2D {
 	[Export] private Marker2D _right;
 	[Export] private Sprite2D _sprite;
 	private float _gravityFactor = 0.1f;
-	private float _velocityCap = 250f;
+	private float _velocityCap = 170f;
 	private float _jumpVelocity = -5f;
-	private float _speed = 200f;
+	private float _speed = 190f;
 	private float _accel = 5f;
 	private bool _cooldown = true;
 	public override void _Ready()
@@ -44,8 +44,8 @@ public partial class creature_player : CharacterBody2D {
 		if (!IsOnFloor())
 		{
 			velocity += GetGravity() * (float) delta * _gravityFactor;
-			_speed = 200f;
-			_accel = 5f;
+			_speed = 190f;
+			_accel = 0.5f;
 		}
 		else
 		{
@@ -61,7 +61,7 @@ public partial class creature_player : CharacterBody2D {
 
 		if (Input.IsActionJustReleased("jump"))
 		{
-			_accel = 1f;
+			_accel = 0.5f;
 		}
 		if (Input.IsActionPressed("s"))
 		{
@@ -71,7 +71,7 @@ public partial class creature_player : CharacterBody2D {
 		else
 		{
 			_gravityFactor = 0.1f;
-			_velocityCap = 250f;
+			_velocityCap = 170f;
 		}
 		if (Input.IsActionJustPressed("shift") && _cooldown)
 		{

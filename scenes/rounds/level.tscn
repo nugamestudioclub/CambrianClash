@@ -35,3 +35,4 @@ position = Vector2(-40, -40)
 
 [node name="border2" parent="." unique_id=529756852 instance=ExtResource("3_uprrs")]
 position = Vector2(1192, -40)
+_LeftSide = false
