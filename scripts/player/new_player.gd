@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 var cooldown: bool = true
-var SPEED = 200.0
+var SPEED = 190.0
 var JUMP_VELOCITY = -5.0
 var accel = 5.0
 var gravity_factor: float = 0.1
-var velocity_cap = 250
+var knockbackPower = 100
+var velocity_cap = 170
 @onready var hitbox: Area2D = $hitbox
 @onready var up: Marker2D = $up
 @onready var down: Marker2D = $down
@@ -36,7 +37,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * gravity_factor
-		SPEED = 200.0
+		SPEED = 190.0
+		accel = 0.5
 		#accel = 5.0
 	else:
 		SPEED = 150.0
@@ -47,14 +49,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y += JUMP_VELOCITY 
 		accel = 10.0
 	if Input.is_action_just_released("jump"):
-		accel = 1.0
+		accel = 0.5
 		
 	if Input.is_action_pressed("s"):
 		gravity_factor = 0.2
 		velocity_cap = 300
 	else:
 		gravity_factor = 0.1
-		velocity_cap = 250
+		velocity_cap = 170
 		
 		
 	if Input.is_action_just_pressed("shift") and cooldown:
@@ -73,5 +75,21 @@ func _physics_process(delta: float) -> void:
 
 	velocity.y = clampf(velocity.y, -velocity_cap, velocity_cap)
 	move_and_slide()
-	print(velocity)
+	#print(velocity)
+	
+func knockback():
+	var knockbackDirection = -velocity.normalized() * knockbackPower
+	velocity.x = knockbackDirection.x
+	move_and_slide()
+
+
+func _on_kb_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("wall"):
+		knockback()
+
+
+func _on_kb_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("wall"):
+		knockback()
+
 	
