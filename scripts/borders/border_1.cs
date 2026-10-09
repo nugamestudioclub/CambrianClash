@@ -18,7 +18,7 @@ public partial class border_1 : Area2D
 	
 	public void OnBodyEntered(Node2D body)
 	{
-		if (body.IsInGroup("player"))
+		if (body.IsInGroup("player") || body.IsInGroup("prey"))
 		{
 			Vector2 position = body.Position;
 			if (_LeftSide == true)

@@ -3,7 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgho"]
 size = Vector2(1352, 66)
 
-[node name="ceiling" type="StaticBody2D" unique_id=1206576644 groups=["floor"]]
+[node name="ceiling" type="StaticBody2D" unique_id=1206576644]
 collision_layer = 4
 collision_mask = 3
 

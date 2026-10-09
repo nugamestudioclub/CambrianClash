@@ -6,7 +6,6 @@ var prey_list: Array = get_children(true)
 var current_prey: int = get_child_count(true)
 var total_prey: int
 var cooldown: bool = true
-@onready var timer: Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

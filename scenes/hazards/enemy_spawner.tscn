@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://1iwx42aebjyb"]
 
+[ext_resource type="Script" uid="uid://5hvb32ohmnjh" path="res://scripts/hazards/enemy_spawner.gd" id="1_u4m02"]
+
 [node name="enemy_spawner" type="Marker2D" unique_id=689052931]
+script = ExtResource("1_u4m02")

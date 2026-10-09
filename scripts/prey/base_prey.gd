@@ -7,7 +7,7 @@ var speed: int = 50
 var velocity_cap = 150
 var gravity_factor: float = 0.1
 var stop: bool = false
-var dir: Vector2 = Vector2.RIGHT
+@export var dir: Vector2 = Vector2.RIGHT
 signal hit
 
 @export var point_val: int = 100
