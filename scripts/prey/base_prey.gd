@@ -50,6 +50,7 @@ func _physics_process(delta: float) -> void:
 	elif enemy_state == States.ACTIVE:
 		sprite_2d.flip_v = false
 		can_eat = false
+		#this line is what determines enemies' movements
 		position += (dir*speed) * delta
 	velocity.y = clampf(velocity.y, -velocity_cap, velocity_cap)
 	move_and_slide()
