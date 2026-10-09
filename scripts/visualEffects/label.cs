@@ -8,7 +8,7 @@ public partial class label : Label
 	public override async void _Ready()
 	{
 		// Sets score value to the score value of enemy eaten
-		
+		Text = _point_val.ToString();
 		// Start a 1-second timer once when the node enters the tree
 		await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
 		
