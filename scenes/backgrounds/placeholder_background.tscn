@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dp3oem1xvxo5a"]
+
+[ext_resource type="Texture2D" uid="uid://vgnxitwa1jjv" path="res://assets/spritesheets/602P01G01Burgess_Shalew.jpg.webp" id="1_gbv3h"]
+
+[node name="background" type="Parallax2D" unique_id=1509242981]
+z_index = -5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=117254483]
+z_index = -5
+position = Vector2(576.5, 324.75)
+scale = Vector2(1.43875, 1.0278219)
+texture = ExtResource("1_gbv3h")
