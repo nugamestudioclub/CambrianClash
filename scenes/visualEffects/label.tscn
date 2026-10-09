@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b3e3p4lktmund" path="res://scripts/visualEffects/label.cs" id="1_v4oh3"]
 
 [node name="Label" type="Label" unique_id=964171332]
+top_level = true
 offset_right = 40.0
 offset_bottom = 23.0
 text = "100"
