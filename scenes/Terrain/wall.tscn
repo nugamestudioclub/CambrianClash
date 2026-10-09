@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ckhmucpoj8gcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu71y"]
+
+[node name="wall" type="Area2D" unique_id=1635982650]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=463516817]
+shape = SubResource("RectangleShape2D_i8x7f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2144413006]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1517602066]
+shape = SubResource("RectangleShape2D_yu71y")
