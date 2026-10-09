@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://mv8ty3q8l64q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu71y"]
+
+[node name="base_prey" type="CharacterBody2D" unique_id=1422661026 groups=["prey"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662923645]
+shape = SubResource("RectangleShape2D_i8x7f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2107308536 groups=["prey"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1660971907]
+shape = SubResource("RectangleShape2D_yu71y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586217583]
+
+[node name="rightCast" type="RayCast2D" parent="." unique_id=1910819321]
+
+[node name="leftCast" type="RayCast2D" parent="." unique_id=1430269567]
