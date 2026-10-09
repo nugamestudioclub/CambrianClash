@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://x7gaf6yequd0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iytv5"]
+size = Vector2(115, 80)
+
+[node name="opabinia" type="Area2D" unique_id=58527539]
+position = Vector2(210, 102)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1811798809]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1374384315]
+position = Vector2(47.5, 30)
+shape = SubResource("RectangleShape2D_iytv5")
