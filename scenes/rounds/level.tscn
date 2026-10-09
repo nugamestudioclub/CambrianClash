@@ -9,7 +9,7 @@
 
 [node name="level" type="Node2D" unique_id=854538153]
 
-[node name="creature_player" parent="." unique_id=794040658 instance=ExtResource("1_geeqx")]
+[node name="creature_player" parent="." unique_id=794040658 groups=["wall"] instance=ExtResource("1_geeqx")]
 position = Vector2(960, 584)
 
 [node name="ceiling" parent="." unique_id=1206576644 instance=ExtResource("2_6g0ag")]

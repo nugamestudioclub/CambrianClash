@@ -33,6 +33,8 @@ project/assembly_name="CambrianClash"
 player_hitbox=""
 floor=""
 player=""
+prey=""
+wall=""
 
 [input]
 
