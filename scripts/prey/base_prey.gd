@@ -11,6 +11,7 @@ var stop: bool = false
 signal hit
 
 @export var point_val: int = 100
+@export var enemy_type: int
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var area_2d: Area2D = $Area2D

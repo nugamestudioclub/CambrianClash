@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://b38k17airofgf"]
-
-[ext_resource type="PackedScene" uid="uid://mv8ty3q8l64q" path="res://scenes/prey/base_prey.tscn" id="1_pdrmk"]
-
-[node name="base_prey" unique_id=1422661026 instance=ExtResource("1_pdrmk")]
