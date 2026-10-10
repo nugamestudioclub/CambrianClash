@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mv8ty3q8l64q" path="res://scenes/prey/base_prey.tscn" id="7_lyedj"]
 [ext_resource type="PackedScene" uid="uid://iqpr1sjfl228" path="res://scenes/plankton/plankton_simple.tscn" id="8_fjqxx"]
 [ext_resource type="PackedScene" uid="uid://djdmorwc0d81u" path="res://scenes/UI/canvas_layer.tscn" id="9_ar8n3"]
+[ext_resource type="PackedScene" uid="uid://dp3oem1xvxo5a" path="res://scenes/backgrounds/placeholder_background.tscn" id="10_f8c6c"]
 
 [node name="level" type="Node2D" unique_id=854538153]
 
@@ -40,10 +41,17 @@ position = Vector2(-48, -40)
 position = Vector2(1200, -40)
 _LeftSide = false
 
-[node name="base_prey2" parent="." unique_id=82749000 instance=ExtResource("7_lyedj")]
+[node name="base_prey" parent="." unique_id=1422661026 instance=ExtResource("7_lyedj")]
+top_level = false
+position = Vector2(312, 464)
+
+[node name="base_prey2" parent="." unique_id=262451626 instance=ExtResource("7_lyedj")]
+top_level = false
 position = Vector2(840, 192)
+dir = Vector2(-1, 0)
 
 [node name="base_prey3" parent="." unique_id=157579565 instance=ExtResource("7_lyedj")]
+top_level = false
 position = Vector2(144, 280)
 
 [node name="plankton_simple" parent="." unique_id=179979171 instance=ExtResource("8_fjqxx")]
@@ -51,5 +59,4 @@ position = Vector2(56, -16)
 
 [node name="HUD" parent="." unique_id=1201257330 instance=ExtResource("9_ar8n3")]
 
-[node name="base_prey4" parent="." unique_id=1422661026 instance=ExtResource("7_lyedj")]
-position = Vector2(312, 464)
+[node name="background" parent="." unique_id=1509242981 instance=ExtResource("10_f8c6c")]
