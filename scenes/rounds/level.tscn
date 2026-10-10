@@ -40,12 +40,8 @@ position = Vector2(-48, -40)
 position = Vector2(1200, -40)
 _LeftSide = false
 
-[node name="base_prey" parent="." unique_id=1422661026 instance=ExtResource("7_lyedj")]
-position = Vector2(312, 464)
-
-[node name="base_prey2" parent="." unique_id=262451626 instance=ExtResource("7_lyedj")]
+[node name="base_prey2" parent="." unique_id=82749000 instance=ExtResource("7_lyedj")]
 position = Vector2(840, 192)
-dir = Vector2(-1, 0)
 
 [node name="base_prey3" parent="." unique_id=157579565 instance=ExtResource("7_lyedj")]
 position = Vector2(144, 280)
@@ -54,3 +50,6 @@ position = Vector2(144, 280)
 position = Vector2(56, -16)
 
 [node name="HUD" parent="." unique_id=1201257330 instance=ExtResource("9_ar8n3")]
+
+[node name="base_prey4" parent="." unique_id=1422661026 instance=ExtResource("7_lyedj")]
+position = Vector2(312, 464)

@@ -29,6 +29,6 @@ func _on_body_entered(body: Node2D) -> void:
 func eaten():
 	Score.add_points(point_val)
 	points.position = position
-	points.point_val = point_val
+	points.PointVal = point_val
 	add_sibling(points)
 	queue_free()

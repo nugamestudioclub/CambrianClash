@@ -27,7 +27,7 @@ texture = ExtResource("2_5dus2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885717667]
 shape = SubResource("RectangleShape2D_2cvwj")
 
-[node name="hitbox" type="Area2D" parent="." unique_id=575701823]
+[node name="hitbox" type="Area2D" parent="." unique_id=575701823 groups=["player_hitbox"]]
 position = Vector2(32, 0)
 collision_mask = 2
 

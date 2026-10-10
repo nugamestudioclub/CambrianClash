@@ -3,17 +3,17 @@ using System;
 
 public partial class label : Label
 {
-	[Export] private int _point_val;
+	[Export] public int PointVal;
 	
 	public override async void _Ready()
 	{
 		// Sets score value to the score value of enemy eaten
-		Text = _point_val.ToString();
+		Text = PointVal.ToString();
 		// Start a 1-second timer once when the node enters the tree
 		await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
 		
 		// Ensure the node wasn't freed while waiting before calling QueueFree
-		if (GodotObject.IsInstanceValid(this))
+		if (IsInstanceValid(this))
 		{
 			QueueFree();
 		}

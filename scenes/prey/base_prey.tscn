@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://mv8ty3q8l64q"]
 
-[ext_resource type="Script" uid="uid://bfqj6tgcevjug" path="res://scripts/prey/base_prey.gd" id="1_5j5rh"]
+[ext_resource type="Script" uid="uid://c1v8g0nq48jf8" path="res://scripts/prey/base_prey.cs" id="1_4354n"]
 [ext_resource type="Texture2D" uid="uid://bt2pvljand161" path="res://assets/spritesheets/icon.svg" id="2_1n6hc"]
+[ext_resource type="PackedScene" uid="uid://ddyi6gh51jg0p" path="res://scenes/visualEffects/label.tscn" id="2_5xqjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
 size = Vector2(48, 48)
@@ -12,7 +13,8 @@ size = Vector2(48, 48)
 [node name="base_prey" type="CharacterBody2D" unique_id=1422661026 groups=["prey"]]
 collision_layer = 128
 collision_mask = 12
-script = ExtResource("1_5j5rh")
+script = ExtResource("1_4354n")
+_pointsScene = ExtResource("2_5xqjv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586217583]
 position = Vector2(-1.9073486e-06, -1.9073486e-06)
@@ -37,6 +39,3 @@ collision_mask = 134
 [node name="leftCast" type="RayCast2D" parent="." unique_id=1430269567]
 target_position = Vector2(-24, 0)
 collision_mask = 134
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
