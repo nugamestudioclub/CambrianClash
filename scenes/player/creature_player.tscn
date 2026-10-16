@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhu3m8nn3ohge" path="res://scripts/player/creature_player.cs" id="1_28qgr"]
 [ext_resource type="Texture2D" uid="uid://bcujo7uh77m54" path="res://assets/spritesheets/radiodonta.png" id="2_28qgr"]
-[ext_resource type="AudioStream" uid="uid://bb07egi77wyn8" path="res://assets/sound/soundEffects/freesound_community-gulp-48452.mp3" id="3_xoevc"]
+[ext_resource type="AudioStream" uid="uid://c4r5fnbi3puyt" path="res://assets/sound/soundEffects/daviddumaisaudio-sword-slash-and-swing-185432.mp3" id="3_xoevc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cvwj"]
 size = Vector2(32, 32)

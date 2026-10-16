@@ -4,9 +4,18 @@ using System;
 public partial class label : Label
 {
 	[Export] public int PointVal;
+	[Export] private AudioStreamPlayer _sound;
+	
+	private async void _PlaySound()
+	{
+		_sound.Play();
+	}
 	
 	public override async void _Ready()
 	{
+		//play sound
+		_PlaySound();
+		
 		// Sets score value to the score value of enemy eaten
 		Text = PointVal.ToString();
 		// Start a 1-second timer once when the node enters the tree
