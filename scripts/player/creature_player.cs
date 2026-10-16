@@ -9,6 +9,8 @@ public partial class creature_player : CharacterBody2D
 	[Export] private Marker2D _left;
 	[Export] private Marker2D _right;
 	[Export] private Sprite2D _sprite;
+	[Export] private AudioStreamPlayer _sound;
+	[Export] private NodePath _attackSFX;
 
 	private float _gravityFactor = 0.1f;
 	private float _velocityCap = 170f;
@@ -35,6 +37,9 @@ public partial class creature_player : CharacterBody2D
 	{
 		_cooldown = false;
 		_hitbox.Visible = true;
+		
+		// Play sound effect
+		_sound.Play();
 	
 		// Enable collision detection in both directions during the swing
 		_hitbox.SetDeferred(Area2D.PropertyName.Monitoring, true);

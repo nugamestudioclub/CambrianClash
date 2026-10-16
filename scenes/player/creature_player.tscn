@@ -10,7 +10,7 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5h27"]
 size = Vector2(32, 32)
 
-[node name="creature_player" type="CharacterBody2D" unique_id=794040658 node_paths=PackedStringArray("_hitbox", "_up", "_down", "_left", "_right", "_sprite") groups=["player"]]
+[node name="creature_player" type="CharacterBody2D" unique_id=794040658 node_paths=PackedStringArray("_hitbox", "_up", "_down", "_left", "_right", "_sprite", "_sound") groups=["player"]]
 collision_mask = 5
 script = ExtResource("1_28qgr")
 _hitbox = NodePath("hitbox")
@@ -19,6 +19,7 @@ _down = NodePath("down")
 _left = NodePath("left")
 _right = NodePath("right")
 _sprite = NodePath("Sprite2D")
+_sound = NodePath("sound")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1081145556]
 position = Vector2(7.1525574e-07, -7.1525574e-07)
@@ -48,5 +49,6 @@ position = Vector2(32, 0)
 [node name="left" type="Marker2D" parent="." unique_id=1887557358]
 position = Vector2(-32, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1176958140]
+[node name="sound" type="AudioStreamPlayer" parent="." unique_id=1176958140]
 stream = ExtResource("3_xoevc")
+max_polyphony = 10
