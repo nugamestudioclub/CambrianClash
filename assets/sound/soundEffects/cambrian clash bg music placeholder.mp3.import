@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bedldp3nkjbdy"
+path="res://.godot/imported/cambrian clash bg music placeholder.mp3-bae694ba7f898ef8706ef736b2907fbe.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/soundEffects/cambrian clash bg music placeholder.mp3"
+dest_files=["res://.godot/imported/cambrian clash bg music placeholder.mp3-bae694ba7f898ef8706ef736b2907fbe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
