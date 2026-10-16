@@ -48,7 +48,6 @@ position = Vector2(312, 464)
 [node name="base_prey2" parent="." unique_id=262451626 instance=ExtResource("7_lyedj")]
 top_level = false
 position = Vector2(840, 192)
-dir = Vector2(-1, 0)
 
 [node name="base_prey3" parent="." unique_id=157579565 instance=ExtResource("7_lyedj")]
 top_level = false
