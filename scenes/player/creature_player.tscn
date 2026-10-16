@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhu3m8nn3ohge" path="res://scripts/player/creature_player.cs" id="1_28qgr"]
 [ext_resource type="Texture2D" uid="uid://bcujo7uh77m54" path="res://assets/spritesheets/radiodonta.png" id="2_28qgr"]
+[ext_resource type="AudioStream" uid="uid://bb07egi77wyn8" path="res://assets/sound/soundEffects/freesound_community-gulp-48452.mp3" id="3_xoevc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cvwj"]
 size = Vector2(32, 32)
@@ -46,3 +47,6 @@ position = Vector2(32, 0)
 
 [node name="left" type="Marker2D" parent="." unique_id=1887557358]
 position = Vector2(-32, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1176958140]
+stream = ExtResource("3_xoevc")
