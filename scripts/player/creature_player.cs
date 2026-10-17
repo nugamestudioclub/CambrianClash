@@ -62,22 +62,30 @@ public partial class creature_player : CharacterBody2D
 		if (hitDirection == new Vector2(0, -1))
 		{
 			_hitbox.Position = _up.Position;
-			_sprite.Rotation = 0;
+			_sprite.Rotation = (float)Math.PI / 2;
+			_sprite.FlipH = true;
+			_sprite.FlipV = true;
 		} 
 		else if (hitDirection == new Vector2(0, 1))
 		{
 			_hitbox.Position = _down.Position;
-			_sprite.Rotation = (float)Math.PI;
+			_sprite.Rotation = (float)Math.PI / 2;
+			_sprite.FlipH = false;
+			_sprite.FlipV = true;
 		} 
 		else if (hitDirection == new Vector2(1, 0))
 		{
 			_hitbox.Position = _right.Position;
-			_sprite.Rotation = (float)Math.PI / 2;
+			_sprite.Rotation = (float)0;
+			_sprite.FlipH = false;
+			_sprite.FlipV = false;
 		} 
 		else if (hitDirection == new Vector2(-1, 0))
 		{
 			_hitbox.Position = _left.Position;
-			_sprite.Rotation = (float)-Math.PI / 2;
+			_sprite.Rotation = (float)0;
+			_sprite.FlipH = true;
+			_sprite.FlipV = false;
 		}
 
 		if (!IsOnFloor())
