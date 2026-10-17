@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ci86dg4tkkooe"]
+
+[ext_resource type="AudioStream" uid="uid://bedldp3nkjbdy" path="res://assets/sound/soundEffects/cambrian clash bg music placeholder.mp3" id="1_746vu"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=132485224]
+stream = ExtResource("1_746vu")
+autoplay = true
