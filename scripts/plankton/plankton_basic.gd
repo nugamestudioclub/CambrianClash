@@ -27,7 +27,7 @@ func _on_body_entered(body: Node2D) -> void:
 		dir_x = -dir_x
 		
 func eaten():
-	Score.add_points(point_val)
+	Score._AddPoints(point_val)
 	points.position = position
 	points.PointVal = point_val
 	add_sibling(points)

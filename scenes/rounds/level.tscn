@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://djdmorwc0d81u" path="res://scenes/UI/canvas_layer.tscn" id="9_ar8n3"]
 [ext_resource type="PackedScene" uid="uid://dp3oem1xvxo5a" path="res://scenes/backgrounds/placeholder_background.tscn" id="10_f8c6c"]
 [ext_resource type="PackedScene" uid="uid://ci86dg4tkkooe" path="res://scenes/audio/bg placeholder.tscn" id="11_r5daq"]
+[ext_resource type="PackedScene" uid="uid://1iwx42aebjyb" path="res://scenes/hazards/enemy_spawner.tscn" id="12_gseu1"]
+[ext_resource type="PackedScene" uid="uid://bg1li1xgobl2i" path="res://scenes/UI/pause_screen.tscn" id="13_20a5f"]
 
 [node name="level" type="Node2D" unique_id=854538153]
 
@@ -62,3 +64,10 @@ position = Vector2(56, -16)
 [node name="background" parent="." unique_id=1509242981 instance=ExtResource("10_f8c6c")]
 
 [node name="AudioStreamPlayer" parent="." unique_id=132485224 instance=ExtResource("11_r5daq")]
+
+[node name="enemy_spawner" parent="." unique_id=689052931 instance=ExtResource("12_gseu1")]
+position = Vector2(584, 304)
+
+[node name="pauseScreen" parent="." unique_id=577534278 instance=ExtResource("13_20a5f")]
+layer = 0
+visible = false

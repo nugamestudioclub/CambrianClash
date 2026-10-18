@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bg1li1xgobl2i"]
+
+[ext_resource type="Script" uid="uid://daw54y01mtnev" path="res://scripts/visualEffects/PauseScreen.cs" id="1_355ex"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gseu1"]
+bg_color = Color(0.003921569, 0.043137256, 0.14117648, 0.69411767)
+
+[node name="pauseScreen" type="CanvasLayer" unique_id=577534278]
+process_mode = 3
+script = ExtResource("1_355ex")
+
+[node name="Panel" type="Panel" parent="." unique_id=162059904]
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 1256.0
+offset_bottom = 728.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gseu1")
+
+[node name="Label" type="Label" parent="." unique_id=347878270]
+offset_left = 904.0
+offset_top = 520.0
+offset_right = 1083.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 43
+text = "P A U S E"

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://ci86dg4tkkooe"]
 
 [ext_resource type="AudioStream" uid="uid://bedldp3nkjbdy" path="res://assets/sound/soundEffects/cambrian clash bg music placeholder.mp3" id="1_746vu"]
+[ext_resource type="Script" uid="uid://dsmtri8b6lh1e" path="res://scripts/sound/BgPlaceholder.cs" id="2_rt14k"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=132485224]
+process_mode = 3
 stream = ExtResource("1_746vu")
 autoplay = true
+script = ExtResource("2_rt14k")
