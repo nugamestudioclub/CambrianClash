@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://mv8ty3q8l64q"]
 
 [ext_resource type="Script" uid="uid://c1v8g0nq48jf8" path="res://scripts/prey/base_prey.cs" id="1_4354n"]
-[ext_resource type="Texture2D" uid="uid://bt2pvljand161" path="res://assets/spritesheets/icon.svg" id="2_1n6hc"]
 [ext_resource type="PackedScene" uid="uid://ddyi6gh51jg0p" path="res://scenes/visualEffects/label.tscn" id="2_5xqjv"]
+[ext_resource type="Texture2D" uid="uid://dlmv6yyip4miu" path="res://assets/spritesheets/pikaia.png" id="3_5xqjv"]
 [ext_resource type="AudioStream" uid="uid://bb07egi77wyn8" path="res://assets/sound/soundEffects/freesound_community-gulp-48452.mp3" id="4_5xqjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
-size = Vector2(46, 46)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu71y"]
-size = Vector2(48, 48)
+size = Vector2(34, 34)
 
 [node name="base_prey" type="CharacterBody2D" unique_id=1422661026 node_paths=PackedStringArray("_sound") groups=["prey"]]
 top_level = true
@@ -21,9 +21,10 @@ _pointsScene = ExtResource("2_5xqjv")
 _sound = NodePath("sound")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586217583]
-position = Vector2(-1.9073486e-06, -1.9073486e-06)
-scale = Vector2(0.37499997, 0.37499997)
-texture = ExtResource("2_1n6hc")
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("3_5xqjv")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=662923645]
 shape = SubResource("RectangleShape2D_i8x7f")
@@ -37,11 +38,11 @@ shape = SubResource("RectangleShape2D_yu71y")
 debug_color = Color(0.9163169, 0.16699341, 0.5862099, 0.41960785)
 
 [node name="rightCast" type="RayCast2D" parent="." unique_id=1910819321]
-target_position = Vector2(24, 0)
+target_position = Vector2(18, 0)
 collision_mask = 134
 
 [node name="leftCast" type="RayCast2D" parent="." unique_id=1430269567]
-target_position = Vector2(-24, 0)
+target_position = Vector2(-18, 0)
 collision_mask = 134
 
 [node name="sound" type="AudioStreamPlayer" parent="." unique_id=1402946905]

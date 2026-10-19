@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://iqpr1sjfl228"]
 
 [ext_resource type="Script" uid="uid://dptuvqevbsk4h" path="res://scripts/plankton/plankton_basic.gd" id="1_i43qu"]
+[ext_resource type="Texture2D" uid="uid://k2rap4c83we6" path="res://assets/spritesheets/plankton.png" id="2_iv0tk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8x7f"]
 
@@ -12,5 +13,10 @@ script = ExtResource("1_i43qu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630719465]
 shape = SubResource("CircleShape2D_i8x7f")
 debug_color = Color(0.7176471, 0.4745098, 0.23529412, 0.6509804)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=815116640]
+position = Vector2(-4, -7.0000005)
+scale = Vector2(0.8333333, 0.8333333)
+texture = ExtResource("2_iv0tk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

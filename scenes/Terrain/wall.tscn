@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ckhmucpoj8gcs"]
 
+[ext_resource type="Texture2D" uid="uid://cftacca1w2ee2" path="res://assets/spritesheets/istockphoto-157588636-612x612.jpg" id="1_bxtbg"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
 size = Vector2(20, 188)
 
@@ -19,3 +21,8 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1517602066 groups=["wall"]]
 shape = SubResource("RectangleShape2D_yu71y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=331429611]
+position = Vector2(7.1525574e-07, -2.1457672e-06)
+scale = Vector2(0.03267974, 0.47290638)
+texture = ExtResource("1_bxtbg")
