@@ -4,6 +4,7 @@ using System;
 public partial class creature_player : CharacterBody2D 
 {
 	[Export] private Area2D _hitbox;
+	[Export] private Area2D _hurtbox;
 	[Export] private Marker2D _up;
 	[Export] private Marker2D _down;
 	[Export] private Marker2D _left;
@@ -17,6 +18,7 @@ public partial class creature_player : CharacterBody2D
 	private float _jumpVelocity = -5f;
 	private float _speed = 190f;
 	private float _accel = 5f;
+	private float _kbPower = 300f;
 	private bool _cooldown = true;
 
 	public override void _Ready()
@@ -31,6 +33,11 @@ public partial class creature_player : CharacterBody2D
 		{
 			_hitbox.AddToGroup("player_hitbox");
 		}
+		
+		_hurtbox = GetNode<Area2D>("hurtbox");
+		_hurtbox.AreaEntered += _OnArea2DAreaEntered;
+
+		_hurtbox.BodyEntered += _OnArea2DBodyEntered;
 	}
 
 	private async void PerformAttack()
@@ -52,6 +59,14 @@ public partial class creature_player : CharacterBody2D
 		_hitbox.SetDeferred(Area2D.PropertyName.Monitorable, false);
 		_hitbox.Visible = false;
 		_cooldown = true;
+	}
+	
+	private void Knockback()
+	{
+		Vector2 velocity = Velocity;
+		Vector2 knockbackDirection = -velocity.Normalized() * _kbPower;
+		velocity.X = knockbackDirection.X;
+		MoveAndSlide();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -134,5 +149,23 @@ public partial class creature_player : CharacterBody2D
 		velocity.Y = Mathf.Clamp(velocity.Y, -_velocityCap, _velocityCap);
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+	
+	private void _OnArea2DAreaEntered(Area2D area)
+	{
+		if (area.IsInGroup("wall"))
+		{
+			GD.Print($"[{Name}] AreaEntered by '{area.Name}' | Groups: {string.Join(", ", area.GetGroups())}");
+			Knockback();
+		}
+	}
+
+	private void _OnArea2DBodyEntered(Node2D body)
+	{
+		if (body.IsInGroup("wall"))
+		{
+			GD.Print($"[{Name}] AreaEntered by '{body.Name}' | Groups: {string.Join(", ", body.GetGroups())}");
+			Knockback();
+		}
 	}
 }

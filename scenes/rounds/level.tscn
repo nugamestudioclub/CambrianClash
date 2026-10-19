@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ci86dg4tkkooe" path="res://scenes/audio/bg placeholder.tscn" id="11_r5daq"]
 [ext_resource type="PackedScene" uid="uid://1iwx42aebjyb" path="res://scenes/hazards/enemy_spawner.tscn" id="12_gseu1"]
 [ext_resource type="PackedScene" uid="uid://bg1li1xgobl2i" path="res://scenes/UI/pause_screen.tscn" id="13_20a5f"]
+[ext_resource type="PackedScene" uid="uid://ckhmucpoj8gcs" path="res://scenes/Terrain/wall.tscn" id="14_fafu6"]
 
 [node name="level" type="Node2D" unique_id=854538153]
 
@@ -71,3 +72,6 @@ position = Vector2(584, 304)
 [node name="pauseScreen" parent="." unique_id=577534278 instance=ExtResource("13_20a5f")]
 layer = 0
 visible = false
+
+[node name="wall" parent="." unique_id=1635982650 instance=ExtResource("14_fafu6")]
+position = Vector2(576, 520)

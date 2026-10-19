@@ -10,10 +10,14 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5h27"]
 size = Vector2(32, 32)
 
-[node name="creature_player" type="CharacterBody2D" unique_id=794040658 node_paths=PackedStringArray("_hitbox", "_up", "_down", "_left", "_right", "_sprite", "_sound") groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
+size = Vector2(34, 34)
+
+[node name="creature_player" type="CharacterBody2D" unique_id=794040658 node_paths=PackedStringArray("_hitbox", "_hurtbox", "_up", "_down", "_left", "_right", "_sprite", "_sound") groups=["player"]]
 collision_mask = 5
 script = ExtResource("1_28qgr")
 _hitbox = NodePath("hitbox")
+_hurtbox = NodePath("hurtbox")
 _up = NodePath("up")
 _down = NodePath("down")
 _left = NodePath("left")
@@ -52,3 +56,10 @@ position = Vector2(-32, 0)
 [node name="sound" type="AudioStreamPlayer" parent="." unique_id=1176958140]
 stream = ExtResource("3_xoevc")
 max_polyphony = 10
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=74921595]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=458722314]
+shape = SubResource("RectangleShape2D_i8x7f")
+debug_color = Color(0.5771196, 0.39691985, 0.9761397, 0.41960785)

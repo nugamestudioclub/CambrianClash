@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bb07egi77wyn8" path="res://assets/sound/soundEffects/freesound_community-gulp-48452.mp3" id="4_5xqjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
-size = Vector2(48, 48)
+size = Vector2(46, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu71y"]
 size = Vector2(48, 48)
