@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cftacca1w2ee2" path="res://assets/spritesheets/istockphoto-157588636-612x612.jpg" id="1_bxtbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8x7f"]
-size = Vector2(20, 188)
+size = Vector2(32, 188)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu71y"]
 size = Vector2(16, 192)

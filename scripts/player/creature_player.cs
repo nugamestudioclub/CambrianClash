@@ -18,7 +18,7 @@ public partial class creature_player : CharacterBody2D
 	private float _jumpVelocity = -5f;
 	private float _speed = 190f;
 	private float _accel = 5f;
-	private float _kbPower = 300f;
+	private float _kbPower = 150f;
 	private bool _cooldown = true;
 
 	public override void _Ready()
@@ -66,7 +66,10 @@ public partial class creature_player : CharacterBody2D
 		Vector2 velocity = Velocity;
 		Vector2 knockbackDirection = -velocity.Normalized() * _kbPower;
 		velocity.X = knockbackDirection.X;
+		Velocity = velocity;
 		MoveAndSlide();
+		GD.Print("Bump!");
+		GD.Print($"[{Name}] knockback: '{knockbackDirection}'");
 	}
 
 	public override void _PhysicsProcess(double delta)
