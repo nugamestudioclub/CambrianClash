@@ -47,12 +47,12 @@ public partial class base_prey : CharacterBody2D
 		if (_leftCast.IsColliding())
 		{
 			_dir = Vector2.Right;
-			_sprite2D.FlipH = !_sprite2D.FlipH;
+			_sprite2D.FlipH = true;
 		}
 		if (_rightCast.IsColliding())
 		{
 			_dir = Vector2.Left;
-			_sprite2D.FlipH = !_sprite2D.FlipH;
+			_sprite2D.FlipH = false;
 		}
 
 		Vector2 velocity = Velocity;
