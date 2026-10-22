@@ -13,7 +13,7 @@ public partial class BgPlaceholder : AudioStreamPlayer
 	{
 		if (GetTree().Paused == true)
 		{
-			VolumeDb = -15;
+			VolumeDb = -10;
 		}
 		else if (GetTree().Paused == false)
 		{
