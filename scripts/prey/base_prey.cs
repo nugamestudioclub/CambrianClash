@@ -12,6 +12,7 @@ public partial class base_prey : CharacterBody2D
 	[Signal] public delegate void HitEventHandler();
 
 	[Export] private Vector2 _dir = Vector2.Right;
+	private float _kbPower = 150f;
 	[Export] private int _pointVal = 100;
 	[Export] private PackedScene _pointsScene;
 	[Export] private AudioStreamPlayer _sound;
@@ -61,14 +62,23 @@ public partial class base_prey : CharacterBody2D
 		{
 			velocity += GetGravity() * (float)delta * _gravityFactor;
 			_sprite2D.FlipV = true;
-			velocity.X = 0; // Freeze horizontal movement while vulnerable
+			//velocity.X = 0; // Freeze horizontal movement while vulnerable
 		}
 		else if (_enemyState == States.Active)
 		{
 			_sprite2D.FlipV = false;
 			velocity.X = _dir.X * _speed;
+			if (_area2D.GetOverlappingAreas().Count != 0 && _area2D.GetOverlappingAreas()[0].IsInGroup("player_hitbox"))
+			{
+				Knockback();
+				TriggerVulnerableState();
+			}
 		}
-
+		
+		if (IsOnFloor() && _enemyState == States.Vulnerable)
+		{
+			velocity.X = 0;
+		}
 		velocity.Y = Mathf.Clamp(velocity.Y, -_velocityCap, _velocityCap);
 		Velocity = velocity;
 
@@ -104,6 +114,7 @@ public partial class base_prey : CharacterBody2D
 		GD.Print($"[{Name}] AreaEntered by '{area.Name}' | Groups: {string.Join(", ", area.GetGroups())}");
 		if (area.IsInGroup("player_hitbox"))
 		{
+			Knockback();
 			TriggerVulnerableState();
 		}
 	}
@@ -115,6 +126,17 @@ public partial class base_prey : CharacterBody2D
 		{
 			Eaten();
 		}
+	}
+	
+	private void Knockback()
+	{
+		Vector2 velocity = Velocity;
+		Vector2 knockbackDirection = -velocity.Normalized() * _kbPower;
+		velocity.X = knockbackDirection.X;
+		Velocity = velocity;
+		MoveAndSlide();
+		GD.Print("Bump!");
+		GD.Print($"[{Name}] knockback: '{knockbackDirection}'");
 	}
 
 	private void Eaten()
