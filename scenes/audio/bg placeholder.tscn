@@ -7,4 +7,6 @@
 process_mode = 3
 stream = ExtResource("1_746vu")
 autoplay = true
+parameters/looping = true
 script = ExtResource("2_rt14k")
+parameters/looping = true
