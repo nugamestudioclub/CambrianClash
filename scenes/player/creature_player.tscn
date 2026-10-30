@@ -58,7 +58,7 @@ stream = ExtResource("3_xoevc")
 max_polyphony = 10
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=74921595]
-collision_mask = 5
+collision_mask = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=458722314]
 shape = SubResource("RectangleShape2D_i8x7f")

@@ -71,6 +71,12 @@ public partial class creature_player : CharacterBody2D
 		GD.Print("Bump!");
 		GD.Print($"[{Name}] knockback: '{knockbackDirection}'");
 	}
+	
+	private void Die()
+	{
+		GD.Print("AAAAAAAAAAAAAHHHHHHHHHHHHHH!!!!!!!!!!!!");
+		CallDeferred(Node.MethodName.QueueFree);
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -160,6 +166,10 @@ public partial class creature_player : CharacterBody2D
 		{
 			GD.Print($"[{Name}] AreaEntered by '{area.Name}' | Groups: {string.Join(", ", area.GetGroups())}");
 			Knockback();
+		}
+		if (area.IsInGroup("predator"))
+		{
+			Die();
 		}
 	}
 
