@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ci86dg4tkkooe" path="res://scenes/audio/bg placeholder.tscn" id="11_r5daq"]
 [ext_resource type="PackedScene" uid="uid://1iwx42aebjyb" path="res://scenes/hazards/enemy_spawner.tscn" id="12_gseu1"]
 [ext_resource type="PackedScene" uid="uid://bg1li1xgobl2i" path="res://scenes/UI/pause_screen.tscn" id="13_20a5f"]
+[ext_resource type="PackedScene" uid="uid://cyxofap186m2g" path="res://scenes/player/player_spawner.tscn" id="13_suytb"]
 [ext_resource type="PackedScene" uid="uid://ckhmucpoj8gcs" path="res://scenes/Terrain/wall.tscn" id="14_fafu6"]
 [ext_resource type="PackedScene" uid="uid://x7gaf6yequd0" path="res://scenes/predator/opabinia.tscn" id="15_iu0fj"]
 
@@ -64,11 +65,15 @@ position = Vector2(56, -16)
 [node name="HUD" parent="." unique_id=1201257330 instance=ExtResource("9_ar8n3")]
 
 [node name="background" parent="." unique_id=1509242981 instance=ExtResource("10_f8c6c")]
+scroll_offset = Vector2(-240, -96)
 
 [node name="AudioStreamPlayer" parent="." unique_id=132485224 instance=ExtResource("11_r5daq")]
 
 [node name="enemy_spawner" parent="." unique_id=689052931 instance=ExtResource("12_gseu1")]
 position = Vector2(584, 304)
+
+[node name="player_spawner" parent="." unique_id=1658940122 instance=ExtResource("13_suytb")]
+position = Vector2(576, -29)
 
 [node name="pauseScreen" parent="." unique_id=577534278 instance=ExtResource("13_20a5f")]
 layer = 0
