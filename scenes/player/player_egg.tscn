@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dbcb7uebepe57"]
+
+[ext_resource type="Script" uid="uid://bb8cc4110qe7u" path="res://scripts/player/PlayerEgg.cs" id="1_frxfa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8x7f"]
+
+[node name="player_egg" type="CharacterBody2D" unique_id=1639622784]
+collision_layer = 256
+collision_mask = 4
+script = ExtResource("1_frxfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1211156549]
+shape = SubResource("CircleShape2D_i8x7f")

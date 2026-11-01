@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cyxofap186m2g"]
 
 [ext_resource type="Script" uid="uid://dmia61cyh2xd4" path="res://scripts/player/player_spawner.cs" id="1_1aqyb"]
+[ext_resource type="PackedScene" uid="uid://dbcb7uebepe57" path="res://scenes/player/player_egg.tscn" id="2_2s7sm"]
 
 [node name="player_spawner" type="Marker2D" unique_id=1658940122]
 script = ExtResource("1_1aqyb")
+_newEgg = ExtResource("2_2s7sm")

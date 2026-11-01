@@ -74,8 +74,8 @@ public partial class creature_player : CharacterBody2D
 	
 	private void Die()
 	{
-		GD.Print("AAAAAAAAAAAAAHHHHHHHHHHHHHH!!!!!!!!!!!!");
 		CallDeferred(Node.MethodName.QueueFree);
+		score.Instance._LoseLife();
 	}
 
 	public override void _PhysicsProcess(double delta)
