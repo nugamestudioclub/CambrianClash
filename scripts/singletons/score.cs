@@ -10,6 +10,10 @@ public partial class score : Node
 	[Signal]
 	public delegate void PlayerDiedEventHandler();
 	
+	[Signal]
+	public delegate void SpawnPlayerEventHandler(Vector2 positon);
+
+	
 	public void _AddPoints(int points)
 	{
 		_score += points;
@@ -19,6 +23,11 @@ public partial class score : Node
 	{
 		EmitSignal(SignalName.PlayerDied);
 		_lives -= 1;
+	}
+
+	public void _SpawnPlayer(Vector2 position)
+	{
+		EmitSignal(SignalName.SpawnPlayer, position);
 	}
 	
 	// Called when the node enters the scene tree for the first time.

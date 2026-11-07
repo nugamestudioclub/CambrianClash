@@ -20,9 +20,12 @@ public partial class creature_player : CharacterBody2D
 	private float _accel = 5f;
 	private float _kbPower = 150f;
 	private bool _cooldown = true;
+	private bool _dead = false;
 
+	
 	public override void _Ready()
 	{
+		
 		_hitbox.Visible = false;
 	
 		// Completely turn off collision detection both ways when not attacking
@@ -38,10 +41,14 @@ public partial class creature_player : CharacterBody2D
 		_hurtbox.AreaEntered += _OnArea2DAreaEntered;
 
 		_hurtbox.BodyEntered += _OnArea2DBodyEntered;
+		
+		score.Instance.SpawnPlayer += Spawn;
 	}
 
 	private async void PerformAttack()
 	{
+		if (_dead) return;
+
 		_cooldown = false;
 		_hitbox.Visible = true;
 		
@@ -63,6 +70,8 @@ public partial class creature_player : CharacterBody2D
 	
 	private void Knockback()
 	{
+		if (_dead) return;
+
 		Vector2 velocity = Velocity;
 		Vector2 knockbackDirection = -velocity.Normalized() * _kbPower;
 		velocity.X = knockbackDirection.X;
@@ -74,12 +83,23 @@ public partial class creature_player : CharacterBody2D
 	
 	private void Die()
 	{
-		CallDeferred(Node.MethodName.QueueFree);
+		_dead = true;
+		Velocity = Vector2.Zero;
+		Position = new Vector2(-100, -100);
 		score.Instance._LoseLife();
 	}
 
+	private void Spawn(Vector2 position)
+	{
+		GlobalPosition = position;
+		Vector2 randomDir = Vector2.Right.Rotated((float)GD.RandRange(0, Mathf.Tau));
+		Velocity = randomDir * 500f;
+		_dead = false;
+	}
+	
 	public override void _PhysicsProcess(double delta)
 	{
+		if (_dead) return;
 		Vector2 velocity = Velocity;
 		Vector2 hitDirection = Input.GetVector("a", "d", "w", "s");
 
@@ -162,6 +182,7 @@ public partial class creature_player : CharacterBody2D
 	
 	private void _OnArea2DAreaEntered(Area2D area)
 	{
+		if (_dead) return;
 		if (area.IsInGroup("wall"))
 		{
 			GD.Print($"[{Name}] AreaEntered by '{area.Name}' | Groups: {string.Join(", ", area.GetGroups())}");
@@ -175,6 +196,7 @@ public partial class creature_player : CharacterBody2D
 
 	private void _OnArea2DBodyEntered(Node2D body)
 	{
+		if (_dead) return;
 		if (body.IsInGroup("wall"))
 		{
 			GD.Print($"[{Name}] AreaEntered by '{body.Name}' | Groups: {string.Join(", ", body.GetGroups())}");
