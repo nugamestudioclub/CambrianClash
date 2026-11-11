@@ -29,7 +29,7 @@ public partial class PlayerEgg : CharacterBody2D
 		if (!canSpawn) return;
 		canSpawn = false;
 		Godot.GD.Print("Spawn Player");
-		await ToSignal(GetTree().CreateTimer(10f), SceneTreeTimer.SignalName.Timeout);
+		await ToSignal(GetTree().CreateTimer(8f), SceneTreeTimer.SignalName.Timeout);
 		score.Instance._SpawnPlayer(GlobalPosition);
 	}
 }
