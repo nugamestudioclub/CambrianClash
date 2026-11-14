@@ -5,7 +5,7 @@ public partial class score : Node
 {
 	public static score Instance;
 	public int _score = 0;
-	public int _lives = 3;
+	public int _lives = 1;
 	
 	[Signal]
 	public delegate void PlayerDiedEventHandler();
@@ -39,6 +39,10 @@ public partial class score : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (_lives < 0)
+		{
+			GetTree().ChangeSceneToFile("res://scenes/menus/game_over.tscn");
+		}
 	}
 	
 }
