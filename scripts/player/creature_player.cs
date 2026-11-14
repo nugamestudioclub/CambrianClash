@@ -83,7 +83,7 @@ public partial class creature_player : CharacterBody2D
 		GD.Print($"[{Name}] knockback: '{knockbackDirection}'");
 	}
 	
-	private void Die()
+	public void Die()
 	{
 		GD.Print(_invincibilityTimer > 0, "Invincibility");
 		if (_invincibilityTimer > 0) return;

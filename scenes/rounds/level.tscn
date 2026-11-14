@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cpshm4d3pyiod" path="res://scenes/Terrain/border_1.tscn" id="3_uprrs"]
 [ext_resource type="PackedScene" uid="uid://d00kqpu4tdmsh" path="res://scenes/Terrain/semisolid.tscn" id="5_6g0ag"]
 [ext_resource type="PackedScene" uid="uid://mv8ty3q8l64q" path="res://scenes/prey/base_prey.tscn" id="7_lyedj"]
+[ext_resource type="PackedScene" uid="uid://cp3nwlv6xwjhr" path="res://scenes/predator/anomalocaris.tscn" id="8_e6sb2"]
 [ext_resource type="PackedScene" uid="uid://iqpr1sjfl228" path="res://scenes/plankton/plankton_simple.tscn" id="8_fjqxx"]
 [ext_resource type="PackedScene" uid="uid://djdmorwc0d81u" path="res://scenes/UI/canvas_layer.tscn" id="9_ar8n3"]
 [ext_resource type="PackedScene" uid="uid://dp3oem1xvxo5a" path="res://scenes/backgrounds/placeholder_background.tscn" id="10_f8c6c"]
@@ -87,3 +88,7 @@ position = Vector2(576, 520)
 
 [node name="opabinia" parent="." unique_id=58527539 instance=ExtResource("15_iu0fj")]
 position = Vector2(688, 432)
+
+[node name="anomalocaris" parent="." unique_id=1255024896 node_paths=PackedStringArray("_player") instance=ExtResource("8_e6sb2")]
+position = Vector2(507, -55)
+_player = NodePath("../creature_player")
