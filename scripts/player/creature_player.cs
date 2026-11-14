@@ -12,15 +12,17 @@ public partial class creature_player : CharacterBody2D
 	[Export] private Sprite2D _sprite;
 	[Export] private AudioStreamPlayer _sound;
 	[Export] private NodePath _attackSFX;
+	[Export] private float _invincibilityTime;
 
 	private float _gravityFactor = 0.1f;
 	private float _velocityCap = 170f;
 	private float _jumpVelocity = -5f;
 	private float _speed = 190f;
 	private float _accel = 5f;
-	private float _kbPower = 150f;
+	private float _kbMultiplier = 0.8f;
 	private bool _cooldown = true;
 	private bool _dead = false;
+	private float _invincibilityTimer = 0;
 
 	
 	public override void _Ready()
@@ -73,7 +75,7 @@ public partial class creature_player : CharacterBody2D
 		if (_dead) return;
 
 		Vector2 velocity = Velocity;
-		Vector2 knockbackDirection = -velocity.Normalized() * _kbPower;
+		Vector2 knockbackDirection = -velocity * _kbMultiplier;
 		velocity.X = knockbackDirection.X;
 		Velocity = velocity;
 		MoveAndSlide();
@@ -83,6 +85,8 @@ public partial class creature_player : CharacterBody2D
 	
 	private void Die()
 	{
+		GD.Print(_invincibilityTimer > 0, "Invincibility");
+		if (_invincibilityTimer > 0) return;
 		_dead = true;
 		Velocity = Vector2.Zero;
 		Position = new Vector2(-100, -100);
@@ -93,13 +97,17 @@ public partial class creature_player : CharacterBody2D
 	{
 		GlobalPosition = position;
 		Vector2 randomDir = Vector2.Right.Rotated((float)GD.RandRange(0, Mathf.Tau));
-		Velocity = randomDir * 500f;
+		Velocity = randomDir * 100f;
 		_dead = false;
+		_invincibilityTimer = _invincibilityTime;
 	}
 	
 	public override void _PhysicsProcess(double delta)
 	{
 		if (_dead) return;
+		_invincibilityTimer -= (float)delta;
+		if (_invincibilityTimer <= 0)
+			_invincibilityTimer = 0.0f;
 		Vector2 velocity = Velocity;
 		Vector2 hitDirection = Input.GetVector("a", "d", "w", "s");
 
@@ -185,7 +193,6 @@ public partial class creature_player : CharacterBody2D
 		if (_dead) return;
 		if (area.IsInGroup("wall"))
 		{
-			GD.Print($"[{Name}] AreaEntered by '{area.Name}' | Groups: {string.Join(", ", area.GetGroups())}");
 			Knockback();
 		}
 		if (area.IsInGroup("predator"))

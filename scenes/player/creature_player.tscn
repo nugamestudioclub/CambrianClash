@@ -24,6 +24,7 @@ _left = NodePath("left")
 _right = NodePath("right")
 _sprite = NodePath("Sprite2D")
 _sound = NodePath("sound")
+_invincibilityTime = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1081145556]
 position = Vector2(7.1525574e-07, -7.1525574e-07)

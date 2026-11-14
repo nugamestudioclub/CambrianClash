@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3twrvv2ohfx5"]
 
 [ext_resource type="PackedScene" uid="uid://dmodtjvmb8utw" path="res://scenes/prey/enemy.tscn" id="1_2pikx"]
-[ext_resource type="Script" uid="uid://bdjd2eq06p7fc" path="res://scripts/prey/new_enemy.cs" id="1_m0kxd"]
+[ext_resource type="Script" uid="uid://bdjd2eq06p7fc" path="res://scripts/prey/prey.cs" id="1_m0kxd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yqk2v"]
 

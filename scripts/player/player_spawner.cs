@@ -38,7 +38,6 @@ public partial class player_spawner : Marker2D
 	{
 		_egg = (PlayerEgg)_newEgg.Instantiate();
 		_egg.GlobalPosition = GlobalPosition;
-		_egg.canSpawn = true;
 		GetTree().CurrentScene.AddChild(_egg);
 	}
 }
