@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cp3nwlv6xwjhr"]
 
 [ext_resource type="Texture2D" uid="uid://b1myifwnikgjb" path="res://assets/spritesheets/anomalocaris.png" id="1_gcthf"]
+[ext_resource type="Script" uid="uid://blg0iqdmqyt7" path="res://scripts/predator/enemy.cs" id="1_wcplv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iytv5"]
 size = Vector2(209.5, 198.5)
 
 [node name="anomalocaris" type="Area2D" unique_id=1255024896]
+script = ExtResource("1_wcplv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2111621142]
 position = Vector2(572, 101)
