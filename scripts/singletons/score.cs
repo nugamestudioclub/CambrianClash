@@ -5,7 +5,7 @@ public partial class score : Node
 {
 	public static score Instance;
 	public int _score = 0;
-	public int _lives = 1;
+	public int _lives = 3;
 	
 	[Signal]
 	public delegate void PlayerDiedEventHandler();

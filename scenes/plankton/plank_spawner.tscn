@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ctd6hue6r7elc"]
+
+[ext_resource type="Script" uid="uid://brvetgv6cfhyu" path="res://scripts/plankton/PlankSpawner.cs" id="1_v3ith"]
+
+[node name="plankSpawner" type="Marker2D" unique_id=1877189762]
+script = ExtResource("1_v3ith")
