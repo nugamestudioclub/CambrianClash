@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djdmorwc0d81u"]
 
 [ext_resource type="Script" uid="uid://05grvshd4w2g" path="res://scripts/singletons/score_display.gd" id="1_13lb3"]
+[ext_resource type="Script" uid="uid://cfnwkxjwepceo" path="res://scripts/singletons/Lives.cs" id="2_dgo5u"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1201257330]
 
@@ -12,3 +13,12 @@ offset_bottom = 77.0
 theme_override_font_sizes/font_size = 27
 text = "SCORE: 00000000"
 script = ExtResource("1_13lb3")
+
+[node name="lives" type="Label" parent="." unique_id=1651686086]
+offset_left = 968.0
+offset_top = 40.0
+offset_right = 1083.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 27
+text = "LIVES: 00"
+script = ExtResource("2_dgo5u")
