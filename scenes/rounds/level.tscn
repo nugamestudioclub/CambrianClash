@@ -21,6 +21,7 @@
 
 [node name="creature_player" parent="." unique_id=794040658 instance=ExtResource("1_geeqx")]
 position = Vector2(960, 584)
+_invincibilityTime = 0.0
 
 [node name="ceiling" parent="." unique_id=1206576644 instance=ExtResource("2_6g0ag")]
 position = Vector2(169, -61)
