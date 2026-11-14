@@ -27,6 +27,14 @@ public partial class PlayerEgg : CharacterBody2D
 		{
 			_presses++;
 		}
+		else if (Input.IsActionJustPressed("a"))
+		{
+			_presses++;
+		}
+		else if (Input.IsActionJustPressed("d"))
+		{
+			_presses++;
+		}
 
 		if (_presses == 10)
 		{
