@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ce7elqjag6xgv"]
 
+[ext_resource type="AudioStream" uid="uid://g2dasynm0i2x" path="res://assets/sound/soundEffects/cambrain.wav" id="1_ujjcl"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmo3u"]
 bg_color = Color(0.24313726, 0, 0, 1)
 
@@ -20,3 +22,7 @@ offset_right = 1182.0
 offset_bottom = 655.0
 theme_override_font_sizes/font_size = 40
 text = "G A M E  O V E R"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=478820862]
+stream = ExtResource("1_ujjcl")
+autoplay = true
