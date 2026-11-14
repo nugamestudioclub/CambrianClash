@@ -8,5 +8,5 @@ size = Vector2(209.5, 198.5)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2111621142]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263031331]
-position = Vector2(572, 102)
+position = Vector2(104, 104)
 shape = SubResource("RectangleShape2D_iytv5")
