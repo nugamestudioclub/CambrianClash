@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ce7elqjag6xgv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmo3u"]
+bg_color = Color(0.24313726, 0, 0, 1)
+
+[node name="gameOver" type="CanvasLayer" unique_id=650163]
+
+[node name="Panel" type="Panel" parent="." unique_id=392489886]
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 1232.0
+offset_bottom = 688.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lmo3u")
+
+[node name="Label" type="Label" parent="Panel" unique_id=150261193]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 600.0
+offset_right = 1182.0
+offset_bottom = 655.0
+theme_override_font_sizes/font_size = 40
+text = "G A M E  O V E R"
