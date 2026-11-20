@@ -4,10 +4,9 @@
 [ext_resource type="Script" uid="uid://blg0iqdmqyt7" path="res://scripts/predator/enemy.cs" id="1_wcplv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iytv5"]
-size = Vector2(209.5, 198.5)
+size = Vector2(209.5, 203.25)
 
 [node name="anomalocaris" type="Area2D" unique_id=1255024896]
-position = Vector2(-103, -103)
 script = ExtResource("1_wcplv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2111621142]
@@ -15,5 +14,5 @@ position = Vector2(103, 103)
 texture = ExtResource("1_gcthf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263031331]
-position = Vector2(103, 103)
+position = Vector2(104, 101.625)
 shape = SubResource("RectangleShape2D_iytv5")
