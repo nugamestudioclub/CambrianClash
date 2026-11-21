@@ -37,6 +37,7 @@ prey=""
 wall=""
 predator=""
 player_hurtbox=""
+border=""
 
 [input]
 

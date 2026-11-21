@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://x7gaf6yequd0"]
 
+[ext_resource type="Script" uid="uid://bfliv5ret253s" path="res://scripts/predator/opabinia.cs" id="1_iafkl"]
+[ext_resource type="Texture2D" uid="uid://bt2pvljand161" path="res://assets/spritesheets/icon.svg" id="2_exwcf"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iytv5"]
 size = Vector2(115, 80)
 
-[node name="opabinia" type="Area2D" unique_id=58527539 groups=["predator"]]
-collision_layer = 16
+[node name="opabinia" type="Area2D" unique_id=1942027446 groups=["predator"]]
+collision_layer = 24
+script = ExtResource("1_iafkl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1811798809]
+scale = Vector2(0.890625, 0.609375)
+texture = ExtResource("2_exwcf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1374384315]
-position = Vector2(47.5, 30)
 shape = SubResource("RectangleShape2D_iytv5")

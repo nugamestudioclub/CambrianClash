@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://djdmorwc0d81u" path="res://scenes/UI/canvas_layer.tscn" id="9_ar8n3"]
 [ext_resource type="PackedScene" uid="uid://dp3oem1xvxo5a" path="res://scenes/backgrounds/placeholder_background.tscn" id="10_f8c6c"]
 [ext_resource type="PackedScene" uid="uid://ci86dg4tkkooe" path="res://scenes/audio/bg placeholder.tscn" id="11_r5daq"]
-[ext_resource type="PackedScene" uid="uid://1iwx42aebjyb" path="res://scenes/hazards/enemy_spawner.tscn" id="12_gseu1"]
+[ext_resource type="PackedScene" uid="uid://1iwx42aebjyb" path="res://scenes/hazards/prey_spawner.tscn" id="12_gseu1"]
 [ext_resource type="PackedScene" uid="uid://bg1li1xgobl2i" path="res://scenes/UI/pause_screen.tscn" id="13_20a5f"]
 [ext_resource type="PackedScene" uid="uid://cyxofap186m2g" path="res://scenes/player/player_spawner.tscn" id="13_suytb"]
+[ext_resource type="Script" uid="uid://domsdrfspoir1" path="res://scripts/hazards/enemy_spawner.cs" id="13_ty61s"]
 [ext_resource type="PackedScene" uid="uid://ckhmucpoj8gcs" path="res://scenes/Terrain/wall.tscn" id="14_fafu6"]
 
 [node name="level" type="Node2D" unique_id=854538153]
@@ -23,7 +24,7 @@
 position = Vector2(960, 584)
 _invincibilityTime = 0.0
 
-[node name="ceiling" parent="." unique_id=1206576644 instance=ExtResource("2_6g0ag")]
+[node name="ceiling" parent="." unique_id=1206576644 groups=["border"] instance=ExtResource("2_6g0ag")]
 position = Vector2(169, -61)
 
 [node name="StaticBody2D" parent="." unique_id=538458320 instance=ExtResource("2_uprrs")]
@@ -41,10 +42,10 @@ position = Vector2(216, 392)
 [node name="StaticBody2D2" parent="." unique_id=1877088251 instance=ExtResource("5_6g0ag")]
 position = Vector2(576, 344)
 
-[node name="border1" parent="." unique_id=1416470455 instance=ExtResource("3_uprrs")]
+[node name="border1" parent="." unique_id=1416470455 groups=["border"] instance=ExtResource("3_uprrs")]
 position = Vector2(-48, -40)
 
-[node name="border2" parent="." unique_id=529756852 instance=ExtResource("3_uprrs")]
+[node name="border2" parent="." unique_id=529756852 groups=["border"] instance=ExtResource("3_uprrs")]
 position = Vector2(1200, -40)
 _LeftSide = false
 
@@ -72,6 +73,10 @@ scroll_offset = Vector2(0, -24)
 
 [node name="enemy_spawner" parent="." unique_id=689052931 instance=ExtResource("12_gseu1")]
 position = Vector2(584, 304)
+<<<<<<< Updated upstream
+=======
+script = ExtResource("13_ty61s")
+>>>>>>> Stashed changes
 
 [node name="player_spawner" parent="." unique_id=1658940122 instance=ExtResource("13_suytb")]
 position = Vector2(576, -29)
@@ -83,6 +88,13 @@ visible = false
 [node name="wall" parent="." unique_id=1635982650 instance=ExtResource("14_fafu6")]
 position = Vector2(576, 520)
 
+<<<<<<< Updated upstream
+=======
+[node name="opabinia" parent="." unique_id=58527539 node_paths=PackedStringArray("_player") instance=ExtResource("15_iu0fj")]
+position = Vector2(3, 689)
+_player = NodePath("../creature_player")
+
+>>>>>>> Stashed changes
 [node name="anomalocaris" parent="." unique_id=1255024896 node_paths=PackedStringArray("_player") instance=ExtResource("8_e6sb2")]
 position = Vector2(507, -55)
 _player = NodePath("../creature_player")

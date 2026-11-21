@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cp3nwlv6xwjhr"]
 
 [ext_resource type="Texture2D" uid="uid://b1myifwnikgjb" path="res://assets/spritesheets/anomalocaris.png" id="1_gcthf"]
-[ext_resource type="Script" uid="uid://blg0iqdmqyt7" path="res://scripts/predator/enemy.cs" id="1_wcplv"]
+[ext_resource type="Script" uid="uid://blg0iqdmqyt7" path="res://scripts/predator/anomalocaris.cs" id="1_wcplv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iytv5"]
 size = Vector2(209.5, 203.25)

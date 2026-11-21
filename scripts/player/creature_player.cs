@@ -23,6 +23,8 @@ public partial class creature_player : CharacterBody2D
 	private bool _cooldown = true;
 	private bool _dead = false;
 	private float _invincibilityTimer = 0;
+	
+	public bool Caught = false;
 
 	
 	public override void _Ready()
@@ -72,7 +74,7 @@ public partial class creature_player : CharacterBody2D
 	
 	private void Knockback()
 	{
-		if (_dead) return;
+		if (_dead || Caught) return;
 
 		Vector2 velocity = Velocity;
 		Vector2 knockbackDirection = -velocity * _kbMultiplier;
@@ -99,12 +101,13 @@ public partial class creature_player : CharacterBody2D
 		Vector2 randomDir = Vector2.Right.Rotated((float)GD.RandRange(0, Mathf.Tau));
 		Velocity = randomDir * 100f;
 		_dead = false;
+		Caught = false;
 		_invincibilityTimer = _invincibilityTime;
 	}
 	
 	public override void _PhysicsProcess(double delta)
 	{
-		if (_dead) return;
+		if (_dead || Caught) return;
 		_invincibilityTimer -= (float)delta;
 		if (_invincibilityTimer <= 0)
 			_invincibilityTimer = 0.0f;
@@ -190,7 +193,7 @@ public partial class creature_player : CharacterBody2D
 	
 	private void _OnArea2DAreaEntered(Area2D area)
 	{
-		if (_dead) return;
+		if (_dead || Caught) return;
 		if (area.IsInGroup("wall"))
 		{
 			Knockback();
@@ -203,7 +206,7 @@ public partial class creature_player : CharacterBody2D
 
 	private void _OnArea2DBodyEntered(Node2D body)
 	{
-		if (_dead) return;
+		if (_dead || Caught) return;
 		if (body.IsInGroup("wall"))
 		{
 			GD.Print($"[{Name}] AreaEntered by '{body.Name}' | Groups: {string.Join(", ", body.GetGroups())}");
